@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /sushiswap/
+Sitemap: https://blast-cross-chain-bridge.github.io/sitemap.xml

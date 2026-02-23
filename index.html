@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blast Cross Chain Bridge – Fast &amp; Secure Transfers</title>
+<meta name="description" content="Blast cross chain bridge lets you move assets between Blast and other networks with low fees and speed. Learn how it works and start bridging today.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://blast-cross-chain-bridge.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blast Cross Chain Bridge – Fast &amp; Secure Transfers">
+<meta property="og:description" content="Blast cross chain bridge lets you move assets between Blast and other networks with low fees and speed. Learn how it works and start bridging today.">
+<meta property="og:url" content="https://blast-cross-chain-bridge.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blast Cross Chain Bridge – Fast &amp; Secure Transfers">
+<meta name="twitter:description" content="Blast cross chain bridge lets you move assets between Blast and other networks with low fees and speed. Learn how it works and start bridging today.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Blast Cross Chain Bridge – Fast & Secure Transfers", "description": "Blast cross chain bridge lets you move assets between Blast and other networks with low fees and speed. Learn how it works and start bridging today.", "inLanguage": "en", "dateModified": "2026-02-23", "url": "https://blast-cross-chain-bridge.github.io/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://blast-cross-chain-bridge.github.io"}, {"@type": "ListItem", "position": 2, "name": "Blast Cross Chain Bridge – Fast & Secure Transfers", "item": "https://blast-cross-chain-bridge.github.io/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the blast cross chain bridge used for?", "acceptedAnswer": {"@type": "Answer", "text": "Blast cross chain bridge is used to transfer cryptocurrencies like ETH and USDC between Ethereum and the Blast network. Users rely on it to access lower fees and DeFi opportunities on Blast without selling their existing assets."}}, {"@type": "Question", "name": "Is blast cross chain bridge safe?", "acceptedAnswer": {"@type": "Answer", "text": "Blast cross chain bridge can be safe when using official contracts and verified URLs, but it still carries smart contract risk. Reviewing audits and starting with small transfers reduces exposure."}}, {"@type": "Question", "name": "How long does a blast cross chain bridge transfer take?", "acceptedAnswer": {"@type": "Answer", "text": "Blast cross chain bridge deposits usually complete within minutes after Ethereum confirmation, while withdrawals may take longer due to Layer 2 settlement processes."}}, {"@type": "Question", "name": "What tokens does the blast cross chain bridge support?", "acceptedAnswer": {"@type": "Answer", "text": "Blast cross chain bridge commonly supports ETH and major ERC-20 tokens like USDC, though supported assets depend on the specific bridge interface and liquidity availability."}}, {"@type": "Question", "name": "Do I need MetaMask for the blast cross chain bridge?", "acceptedAnswer": {"@type": "Answer", "text": "No specific wallet is mandatory, but a Web3 wallet such as MetaMask that supports custom networks is typically required to connect to the Blast network and sign transactions."}}, {"@type": "Question", "name": "Are there fees for using the blast cross chain bridge?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, users pay Ethereum gas fees and possibly additional protocol or liquidity fees depending on the bridge route selected."}}, {"@type": "Question", "name": "Can I bridge USDC to Blast?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, bridging USDC to Blast is commonly supported, allowing stablecoin deployment in Blast ecosystem applications."}}, {"@type": "Question", "name": "What happens if a blast cross chain bridge transaction fails?", "acceptedAnswer": {"@type": "Answer", "text": "If a blast cross chain bridge transaction fails before confirmation, funds typically remain in your wallet. If complications occur after contract interaction, reviewing the transaction hash on a block explorer helps determine status."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===========================================
+   BASE GRAY — Cool Neutral Premium
+   Template ID: base-gray
+   =========================================== */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #f4f5f7;
+  --bg-secondary: #ebedf0;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfd;
+  --bg-subtle: #e8eaed;
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-light: rgba(13,148,136,0.07);
+  --accent-border: rgba(13,148,136,0.2);
+  --gradient-cta: linear-gradient(135deg, #0d9488, #0f766e);
+  --gradient-cta-glow: rgba(13,148,136,0.2);
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #d1d5db;
+  --border-hover: #b0b5bd;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.07);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+body {
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ═══════ PROGRESS BAR ═══════ */
+#progress-bar {
+  position: fixed; top: 0; left: 0; width: 0%; height: 2px;
+  background: var(--accent); z-index: 10000;
+  transition: width 0.1s linear;
+}
+
+/* ═══════ CONTAINERS ═══════ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.content-container { max-width: 760px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ═══════ PILL NAVIGATION ═══════ */
+.pill-nav {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 9000;
+  background: rgba(244,245,247,0.88);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 50px; padding: 5px 6px;
+  display: flex; align-items: center; gap: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s, transform 0.35s;
+  transform: translateX(-50%) translateY(-8px);
+  max-width: 94vw; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.pill-nav::-webkit-scrollbar { display: none; }
+.pill-nav.visible { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+
+.pill-nav a {
+  font-family: 'Manrope', sans-serif; font-size: 0.8125rem; font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  padding: 7px 14px; border-radius: 50px;
+  transition: color 0.2s, background 0.2s; white-space: nowrap;
+}
+.pill-nav a:hover { color: var(--text-primary); background: var(--bg-subtle); }
+.pill-nav a.active { color: var(--text-primary); background: var(--bg-subtle); font-weight: 600; }
+
+/*CTA_START*/
+.pill-nav .pill-cta {
+  font-family: 'Manrope', sans-serif; font-size: 0.8125rem; font-weight: 600;
+  color: #fff; background: var(--gradient-cta);
+  padding: 7px 18px; border-radius: 50px; text-decoration: none;
+  margin-left: 4px; white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px var(--gradient-cta-glow);
+}
+.pill-nav .pill-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--gradient-cta-glow); }
+/*CTA_END*/
+
+/* ═══════ HERO ═══════ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; z-index: 1; padding: 80px 24px;
+  background: var(--bg-secondary);
+}
+.hero::before {
+  content: ''; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(13,148,136,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 780px; position: relative; }
+
+.hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  font-weight: 800; line-height: 1.08; letter-spacing: -0.04em;
+  color: var(--text-primary); margin-bottom: 24px;
+}
+.hero-subtitle {
+  font-size: 1.125rem; color: var(--text-secondary);
+  max-width: 520px; margin: 0 auto 40px; line-height: 1.8;
+}
+
+/*CTA_START*/
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 38px; background: var(--gradient-cta); color: #fff;
+  font-family: 'Manrope', sans-serif; font-size: 1.0625rem; font-weight: 700;
+  text-decoration: none; border-radius: 50px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 4px 24px var(--gradient-cta-glow);
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(13,148,136,0.3); animation: none; }
+.hero-cta svg { width: 18px; height: 18px; }
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 4px 24px var(--gradient-cta-glow); }
+  50% { box-shadow: 0 4px 32px rgba(13,148,136,0.3); }
+}
+/*CTA_END*/
+
+.hero-scroll-hint {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  color: var(--text-muted); font-size: 0.7rem; font-family: 'Manrope', sans-serif;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: hintPulse 2.5s ease-in-out infinite;
+}
+.hero-scroll-hint span { width: 1px; height: 24px; background: linear-gradient(to bottom, var(--text-muted), transparent); }
+@keyframes hintPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+/* ═══════ CONTENT AREA ═══════ */
+.content-area { padding: 80px 0; position: relative; z-index: 1; }
+
+.content-area h2 {
+  font-family: 'Manrope', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;
+  color: var(--text-primary); margin: 64px 0 20px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 80px;
+}
+.content-area h2:first-child { margin-top: 0; }
+.content-area h3 {
+  font-family: 'Manrope', sans-serif; font-size: 1.1875rem; font-weight: 600;
+  color: var(--text-primary); margin: 36px 0 10px;
+  scroll-margin-top: 80px;
+}
+.content-area h4 { font-family: 'Manrope', sans-serif; font-size: 1.0625rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px; }
+.content-area p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.85; }
+.content-area a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
+.content-area a:hover { border-bottom-color: var(--accent); }
+.content-area strong { color: var(--text-primary); font-weight: 700; }
+.content-area section { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e2e4e8; }
+.content-area section:last-of-type { border-bottom: none; }
+
+.content-area .intro { font-size: 1.0625rem; border-left: 3px solid var(--accent); padding-left: 20px; margin-bottom: 40px; border-bottom: none; }
+.content-area .intro p { color: var(--text-secondary); font-size: 1.0625rem; }
+
+.capsule {
+  background: var(--accent-light); border: 1px solid rgba(13,148,136,0.12);
+  border-radius: var(--radius-md); padding: 18px 22px;
+  font-size: 1.0625rem; line-height: 1.7;
+  color: var(--text-primary) !important; margin: 16px 0;
+}
+
+.evidence {
+  font-size: 0.875rem; color: var(--text-muted) !important;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px 16px 12px 42px;
+  margin: 12px 0 20px; position: relative;
+}
+.evidence::before {
+  content: '▪'; position: absolute; left: 16px; top: 12px;
+  font-size: 0.7rem; color: var(--accent);
+}
+
+.content-area ul, .content-area ol { margin: 16px 0; padding-left: 24px; color: var(--text-secondary); }
+.content-area li { margin-bottom: 8px; line-height: 1.75; }
+.content-area ul li::marker { color: var(--accent); }
+.content-area ol li::marker { color: var(--accent); font-weight: 700; font-family: 'Manrope', sans-serif; }
+
+.content-area blockquote {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); padding: 24px 24px 24px 52px;
+  margin: 28px 0; border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  position: relative; box-shadow: var(--shadow-sm);
+}
+.content-area blockquote::before {
+  content: '\201C'; position: absolute; left: 16px; top: 10px;
+  font-size: 2.5rem; line-height: 1; color: var(--accent); opacity: 0.35;
+  font-family: Georgia, serif;
+}
+.content-area blockquote p { color: var(--text-primary); font-size: 1.0625rem; font-style: italic; margin: 0; }
+
+.table-wrap { overflow-x: auto; margin: 24px 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.table-wrap table { width: 100%; border-collapse: collapse; }
+.table-wrap thead { background: var(--bg-subtle); }
+.table-wrap th { padding: 13px 18px; text-align: left; font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+.table-wrap td { padding: 13px 18px; color: var(--text-secondary); border-bottom: 1px solid var(--border); font-size: 0.9375rem; }
+.table-wrap tbody tr:last-child td { border-bottom: none; }
+.table-wrap tbody tr:hover { background: rgba(13,148,136,0.02); }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 24px 0; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 22px;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  box-shadow: var(--shadow-sm);
+}
+.card:hover { border-color: var(--accent-border); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.card h4 { font-family: 'Manrope', sans-serif; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
+.card p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; }
+
+.steps { margin: 28px 0; counter-reset: step-counter; position: relative; padding-left: 24px; }
+.steps::before {
+  content: ''; position: absolute; left: 17px; top: 28px; bottom: 28px; width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+  border-radius: 2px;
+}
+.step {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 16px 0; counter-increment: step-counter; position: relative;
+}
+.step::before {
+  content: counter(step-counter); min-width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-primary); border: 2px solid var(--accent);
+  border-radius: 50%; font-family: 'Manrope', sans-serif;
+  font-weight: 700; font-size: 0.8125rem; color: var(--accent); flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.step h4 { margin: 0 0 4px; }
+.step p { margin: 0; font-size: 0.9375rem; }
+
+.toc {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px 28px; margin: 24px 0 40px;
+  box-shadow: var(--shadow-sm);
+}
+.toc h2 { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 0 0 12px; padding: 0; border: none; }
+.toc ol { padding-left: 20px; margin: 0; }
+.toc li { margin-bottom: 5px; }
+.toc a { color: var(--text-secondary); border-bottom: none; font-size: 0.9375rem; }
+.toc a:hover { color: var(--accent); }
+
+.pill-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.pill { display: inline-block; padding: 5px 14px; background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 50px; color: var(--text-secondary); font-size: 0.8125rem; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.pill:hover { border-color: var(--accent); color: var(--accent); }
+
+/*CTA_START*/
+.mid-cta { text-align: center; margin: 36px 0; }
+
+.cta-section {
+  text-align: center; padding: 56px 32px; margin: 48px 0;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: -50%; left: -30%; width: 160%; height: 160%;
+  background: radial-gradient(ellipse, rgba(13,148,136,0.03), transparent 60%);
+  pointer-events: none;
+}
+.cta-section h2 { border: none; padding: 0; margin: 0 0 10px; position: relative; }
+.cta-section p { margin-bottom: 26px; position: relative; }
+
+.cta-button {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 36px; background: var(--gradient-cta); color: #fff;
+  font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700;
+  text-decoration: none; border-radius: 50px;
+  box-shadow: 0 4px 20px var(--gradient-cta-glow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(13,148,136,0.3); }
+
+.floating-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 8000;
+  background: rgba(244,245,247,0.92); backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  padding: 12px 24px; text-align: center;
+  transform: translateY(100%); transition: transform 0.35s ease;
+}
+.floating-cta.visible { transform: translateY(0); }
+.floating-cta .cta-button { padding: 12px 28px; font-size: 0.9375rem; }
+/*CTA_END*/
+
+.faq-section { margin: 48px 0; border-bottom: none !important; }
+.faq-section h2 { text-align: center; border: none; padding: 0; margin-bottom: 24px; }
+.faq-section details { border-bottom: 1px solid var(--border); }
+.faq-section details:first-of-type { border-top: 1px solid var(--border); }
+.faq-section summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 4px; cursor: pointer; font-family: 'Manrope', sans-serif;
+  font-weight: 500; font-size: 1rem; color: var(--text-primary);
+  list-style: none; transition: color 0.2s;
+}
+.faq-section summary::-webkit-details-marker { display: none; }
+.faq-section summary::after { content: '+'; font-size: 1.25rem; font-weight: 300; color: var(--text-muted); flex-shrink: 0; margin-left: 16px; }
+.faq-section details[open] summary::after { content: '\2212'; color: var(--accent); }
+.faq-section summary:hover { color: var(--accent); }
+.faq-section details p { padding: 0 4px 18px; font-size: 0.9375rem; color: var(--text-secondary); }
+.faq-section h3 { margin-top: 24px; }
+.faq-section dl { margin: 0; }
+.faq-section dt { font-weight: 500; color: var(--text-primary); padding: 16px 4px 4px; border-top: 1px solid var(--border); }
+.faq-section dt:first-child { border-top: none; }
+.faq-section dd { padding: 0 4px 16px; color: var(--text-secondary); font-size: 0.9375rem; margin: 0; }
+
+.disclosure { font-size: 0.8125rem; color: var(--text-muted); font-style: italic; text-align: center; padding: 16px 0; border-top: 1px solid var(--border); margin-top: 40px; }
+
+footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; position: relative; z-index: 1; }
+footer p { color: var(--text-muted); font-size: 0.8125rem; }
+footer .updated { margin-top: 6px; font-size: 0.75rem; }
+
+#back-to-top {
+  position: fixed; bottom: 32px; right: 32px; width: 42px; height: 42px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 50%; color: var(--text-muted); font-size: 1.125rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999; box-shadow: var(--shadow-md);
+}
+#back-to-top.visible { opacity: 1; visibility: visible; }
+#back-to-top:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.content-area img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 24px 0; border: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .container, .content-container { padding: 0 16px; }
+  .hero h1 { font-size: 2.25rem; }
+  .pill-nav { padding: 4px 5px; }
+  .pill-nav a { padding: 6px 10px; font-size: 0.75rem; }
+  .pill-nav .pill-cta { padding: 6px 14px; font-size: 0.75rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .steps { padding-left: 16px; }
+  .step::before { min-width: 30px; height: 30px; font-size: 0.75rem; }
+  #back-to-top { bottom: 72px; right: 16px; }
+}
+
+@media print {
+  .pill-nav, .hero-cta, .cta-section, .mid-cta, .floating-cta, #back-to-top, #progress-bar, .hero-scroll-hint { display: none !important; }
+  body { color: #000; background: #fff; }
+  .hero { min-height: auto; padding: 40px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+  @keyframes ctaPulse { 0%, 100% { box-shadow: 0 4px 24px var(--gradient-cta-glow); } }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+.disclaimer-block {
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    margin-top: 32px;
+    font-style: italic;
+}
+.disclaimer-block p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<nav class="pill-nav" id="pill-nav"></nav>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <h1>Blast Cross Chain Bridge</h1>
+    <p class="hero-subtitle">Transfer assets between Blast and major networks in minutes.</p>
+    <!--CTA_START-->
+    <a href="/sushiswap/" class="hero-cta">Use Blast Bridge <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <!--CTA_END-->
+  </div>
+  <div class="hero-scroll-hint">scroll<span></span></div>
+</section>
+
+<main class="content-area">
+  <div class="content-container">
+    <section class="intro">
+<p><strong>Blast cross chain bridge</strong> is a blockchain interoperability tool that enables users to transfer cryptocurrencies and tokens between the Blast Layer 2 network and other blockchains, such as Ethereum, by locking assets on one chain and minting or releasing equivalent assets on another. In practice, that means you can move ETH or USDC from Ethereum mainnet to the Blast network without selling your position.</p>
+<p>Most users searching for a bridge to Blast want two things: speed and clarity. Fees matter. Confirmation times matter. Security matters even more. We break down exactly how assets are locked, how minting works on the Blast Layer 2 bridge, and how official and third-party bridges compare in real-world use.</p>
+<p>Expect a practical walkthrough, a clear fee comparison, and a straight discussion of risk. After comparing multiple cross-chain crypto bridge options and testing transfers ourselves, we focus on what actually impacts your funds — not marketing claims.</p>
+</section>
+
+<nav class="toc" aria-label="Table of Contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#what-is-blast-bridge">What Is Blast Cross Chain Bridge?</a></li>
+    <li><a href="#how-blast-bridge-works">How Blast Cross Chain Bridge Works</a></li>
+    <li><a href="#supported-networks-tokens">Supported Networks & Tokens</a></li>
+    <li><a href="#fees-and-speed">Fees and Transaction Speed</a></li>
+    <li><a href="#how-to-use-blast-bridge">How to Use Blast Cross Chain Bridge</a></li>
+    <li><a href="#official-vs-third-party">Official vs Third-Party Bridges</a></li>
+    <li><a href="#comparison">Blast Bridge Comparison Table</a></li>
+    <li><a href="#security">Security & Trust</a></li>
+  </ol>
+</nav>
+
+<section id="what-is-blast-bridge">
+  <h2>What Is Blast Cross Chain Bridge?</h2>
+  <p class="capsule">Blast cross chain bridge is a non-custodial bridge that connects the Blast Layer 2 network with other blockchains, primarily Ethereum, allowing users to transfer assets like ETH and USDC by locking tokens on one chain and minting equivalents on another through smart contracts.</p>
+  <p class="evidence">Blast operates as an Ethereum Layer 2 solution, meaning transactions ultimately settle on Ethereum mainnet, as documented in Ethereum’s official resources (<a href="https://ethereum.org/en/layer-2/" rel="noopener noreferrer" target="_blank">https://ethereum.org/en/layer-2/</a>).</p>
+  <p>Under the hood, a bridge to Blast uses smart contracts to escrow tokens on the origin chain. Once confirmed, the system issues corresponding tokens on the Blast network. Reverse transfers burn or lock assets on Blast before releasing originals on Ethereum.</p>
+  <p>Think of it like checking luggage at an airport. You hand it over in one place, receive a claim ticket, and pick up the equivalent on the other side.</p>
+  <h3>Blast Layer 2 Bridge Basics</h3>
+  <p>Built as a Blast Layer 2 bridge, the system inherits Ethereum’s security model while offering lower gas fees and faster confirmation times for DeFi on Blast. Transactions batch on Layer 2 before settling to mainnet.</p>
+  <h3>Non-Custodial Design Explained</h3>
+  <p>Non-custodial means users keep wallet control at all times. Smart contracts handle locking and minting, rather than a centralized exchange holding deposits. That reduces counterparty risk but increases smart contract exposure.</p>
+  <h3>When to Use the Blast Cross Chain Bridge</h3>
+  <p>Use the blast cross chain bridge when you want access to Blast ecosystem dApps, yield strategies, or NFT platforms without liquidating assets on Ethereum.</p>
+</section>
+
+<section id="how-blast-bridge-works">
+  <h2>How Blast Cross Chain Bridge Works</h2>
+  <p class="capsule">Blast cross chain bridge works by locking tokens in a smart contract on the source chain, verifying the transaction through network consensus, and minting or unlocking equivalent tokens on the destination chain, enabling cross-chain liquidity without selling the original asset.</p>
+  <p class="evidence">Cross-chain bridges typically rely on smart contracts and validators; similar mechanisms are described in the general overview of cross-chain interoperability on Wikipedia (<a href="https://en.wikipedia.org/wiki/Blockchain_bridge" rel="noopener noreferrer" target="_blank">https://en.wikipedia.org/wiki/Blockchain_bridge</a>).</p>
+  <p>First, you initiate a transfer from Ethereum to Blast using a connected wallet such as MetaMask configured for the Blast network. After paying gas fees, the contract locks ETH to Blast in escrow.</p>
+  <p>Validators or protocol mechanisms confirm the deposit. Once validated, a corresponding token balance appears on Blast mainnet transfer history in your wallet.</p>
+  <p>Reverse bridging follows the same logic — burn or lock on Blast, release on Ethereum.</p>
+  <h3>Lock and Mint Mechanism</h3>
+  <p>Locking prevents double spending. Minting ensures 1:1 backing between chains, maintaining peg integrity for assets like bridged ETH or USDC on Blast.</p>
+  <h3>Transaction Finality and Delays</h3>
+  <p>Depending on congestion, Ethereum confirmations may take minutes. Blast bridge transaction time is usually faster on the Layer 2 side but may require additional waiting for withdrawals back to mainnet.</p>
+  <h3>Blast Cross Chain Bridge Smart Contracts</h3>
+  <p>Blast cross chain bridge smart contracts define deposit, mint, burn, and release functions. Audited code and transparent contract addresses reduce uncertainty for advanced users who verify transactions on-chain.</p>
+</section>
+
+<section id="supported-networks-tokens">
+  <h2>Supported Networks & Tokens</h2>
+  <p class="capsule">Supported networks for the blast cross chain bridge typically include Ethereum mainnet and the Blast network itself, with commonly bridged tokens such as ETH and USDC, though availability may expand depending on ecosystem integrations and liquidity providers.</p>
+  <p class="evidence">Most Ethereum Layer 2 bridges initially prioritize ETH and major stablecoins like USDC due to liquidity depth and user demand.</p>
+  <p>ETH to Blast remains the most common route. Stablecoins follow closely, especially for DeFi on Blast strategies involving lending or liquidity pools.</p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Ethereum Mainnet</h4>
+      <p>Primary source chain for deposits into Blast, supporting ETH and major ERC-20 tokens.</p>
+    </div>
+    <div class="card">
+      <h4>Blast Network</h4>
+      <p>Destination Layer 2 chain offering lower fees and faster execution for dApps.</p>
+    </div>
+    <div class="card">
+      <h4>Stablecoins</h4>
+      <p>USDC and similar assets often supported for trading and liquidity provisioning.</p>
+    </div>
+  </div>
+  <h3>Bridge USDC to Blast</h3>
+  <p>Bridging USDC to Blast provides predictable value for trading pairs and yield protocols, reducing exposure to ETH price volatility during strategy deployment.</p>
+  <h3>ETH to Blast Transfers</h3>
+  <p>ETH to Blast transfers power gas payments and DeFi interactions. Most wallets auto-detect bridged ETH once the Blast network is added.</p>
+  <h3>Checking Supported Tokens</h3>
+  <p>Before initiating a transfer, verify Blast bridge supported tokens directly in the interface to avoid sending unsupported ERC-20 assets.</p>
+</section>
+
+<section id="fees-and-speed">
+  <h2>Fees and Transaction Speed</h2>
+  <p class="capsule">Fees for the blast cross chain bridge include Ethereum gas costs for deposits and potential Layer 2 execution fees, while transaction speed depends on network congestion, typically ranging from a few minutes for deposits to longer waiting periods for withdrawals.</p>
+  <p class="evidence">Ethereum gas fees fluctuate based on demand; historical spikes have exceeded 100 gwei during peak usage periods.</p>
+  <p>Deposit fees primarily reflect Ethereum gas. During calm markets, transfers may cost under $10; during congestion, that figure climbs sharply.</p>
+  <p>Withdrawal delays often exist because Layer 2 solutions require proof submission to mainnet. That safeguard improves security but adds time.</p>
+  <blockquote>
+    <p>Lower Layer 2 fees do not eliminate mainnet costs — they shift when and how you pay them.</p>
+  </blockquote>
+  <h3>Blast Bridge Fees Breakdown</h3>
+  <p>Blast bridge fees combine gas, protocol fees if any, and slippage when interacting with liquidity bridges. Always review the final confirmation screen.</p>
+  <h3>Blast Bridge Transaction Time</h3>
+  <p>Blast bridge transaction time for deposits is usually fast once Ethereum confirms, while exits may require additional settlement windows.</p>
+  <h3>Reducing Gas Costs</h3>
+  <p>Timing matters. Initiating transfers during lower network activity can significantly reduce ETH to Blast costs.</p>
+</section>
+
+<section id="how-to-use-blast-bridge">
+  <h2>How to Use Blast Cross Chain Bridge</h2>
+  <p class="capsule">To use blast cross chain bridge, connect a compatible wallet, select the source and destination networks, choose a supported token such as ETH or USDC, confirm the transaction, and wait for blockchain confirmations before accessing funds on Blast.</p>
+  <p class="evidence">Most non-custodial bridges require wallet signatures for each transaction step, ensuring user authorization at the smart contract level.</p>
+  <div class="steps">
+    <div class="step">
+      <div>
+        <h4>Connect Wallet</h4>
+        <p>Use MetaMask or another Web3 wallet configured for Ethereum and add the Blast network details.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h4>Select Asset</h4>
+        <p>Choose ETH, USDC, or another supported token and enter the transfer amount.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h4>Confirm and Wait</h4>
+        <p>Approve the transaction, pay gas, and monitor confirmations until funds appear on Blast.</p>
+      </div>
+    </div>
+  </div>
+  <h3>Wallet Setup for Blast Network</h3>
+  <p>Adding the Blast network to MetaMask requires RPC details provided by official documentation. Double-check URLs to avoid phishing copies.</p>
+  <h3>Approvals and Signatures</h3>
+  <p>Token approvals allow the blast cross chain bridge contract to move specified amounts. Limit approvals where possible to reduce exposure.</p>
+  <h3>Common User Mistakes</h3>
+  <p>Sending unsupported tokens or using the wrong network selection causes delays and recovery issues. Always verify before clicking confirm.</p>
+</section>
+
+<section id="official-vs-third-party">
+  <h2>Official vs Third-Party Bridges</h2>
+  <p class="capsule">Official blast cross chain bridge options are typically developed or endorsed by the Blast team and prioritize protocol-level security, while third-party bridges may offer faster liquidity routes or additional token support but introduce different trust and smart contract risks.</p>
+  <p class="evidence">Historically, several high-profile bridge exploits in 2022–2023 involved third-party protocols, highlighting the importance of contract audits and validator security.</p>
+  <p>Official bridges often integrate directly with the Blast ecosystem. That alignment can simplify support and documentation.</p>
+  <p>Third-party cross-chain crypto bridge providers sometimes reduce waiting times by using liquidity pools instead of canonical mint-and-burn mechanics.</p>
+  <p>Speed versus trust — that’s the trade-off.</p>
+  <h3>Blast Cross Chain Bridge Official Route</h3>
+  <p>Using the official blast cross chain bridge aligns with protocol upgrades and reduces compatibility surprises during network updates.</p>
+  <h3>Liquidity Bridges Explained</h3>
+  <p>Liquidity-based bridges front assets on the destination chain, later rebalancing positions across chains, which can shorten user-facing delays.</p>
+  <h3>Risk Comparison</h3>
+  <p>Smart contract complexity, validator design, and liquidity depth all influence risk. Evaluate audits, total value locked, and incident history before choosing.</p>
+</section>
+
+<section id="comparison">
+  <h2>Blast Bridge Comparison Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Official Blast Bridge</th>
+          <th>Third-Party Bridge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary Route</td>
+          <td>Ethereum ↔ Blast</td>
+          <td>Multiple chains ↔ Blast</td>
+        </tr>
+        <tr>
+          <td>Token Support</td>
+          <td>Core assets (ETH, USDC)</td>
+          <td>Often broader ERC-20 range</td>
+        </tr>
+        <tr>
+          <td>Withdrawal Time</td>
+          <td>May include settlement delay</td>
+          <td>Often faster via liquidity pools</td>
+        </tr>
+        <tr>
+          <td>Security Model</td>
+          <td>Protocol-aligned contracts</td>
+          <td>Independent smart contracts</td>
+        </tr>
+        <tr>
+          <td>Fee Structure</td>
+          <td>Mainly gas-based</td>
+          <td>Gas + liquidity fees</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td>Long-term ecosystem use</td>
+          <td>Speed and token variety</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>After comparing options, conservative users often prefer the official blast cross chain bridge for alignment and transparency, while active traders may prioritize speed through third-party routes.</p>
+</section>
+
+<section id="security">
+  <h2>Security & Trust</h2>
+  <p class="capsule">Blast cross chain bridge security depends on audited smart contracts, transparent validator mechanisms, and user-controlled wallets, but all cross-chain bridges carry inherent smart contract and operational risks that can lead to partial or total loss of funds if vulnerabilities are exploited.</p>
+  <ul>
+    <li><strong>Non-custodial control</strong> — Users retain wallet ownership, signing each transaction directly rather than depositing into a centralized exchange.</li>
+    <li><strong>Smart contract audits</strong> — Reputable bridges publish third-party audit reports reviewing mint, burn, and lock logic.</li>
+    <li><strong>Transparent fees</strong> — Clear gas and protocol fee breakdowns reduce hidden cost exposure.</li>
+    <li><strong>Acknowledged risks</strong> — Cross-chain exploits have occurred industry-wide, making risk assessment essential before large transfers.</li>
+  </ul>
+  <p>Even with safeguards, no bridge eliminates smart contract risk entirely.</p>
+</section>
+
+
+<section id="common-issues-troubleshooting">
+  <h2>Common Blast Bridge Issues</h2>
+  <p class="capsule">Common blast cross chain bridge issues include delayed confirmations due to Ethereum congestion, incorrect network selection in wallets, insufficient gas balances, and sending unsupported tokens, all of which can delay or complicate asset transfers between Ethereum and the Blast network.</p>
+  <p class="evidence">Ethereum network congestion has historically increased confirmation times during peak NFT mints and DeFi surges, directly affecting bridge deposits.</p>
+  <p>In our experience, most failed transfers trace back to simple configuration errors. Users forget to switch from Ethereum to Blast mainnet in MetaMask, then assume funds disappeared.</p>
+  <p>Gas miscalculations create another bottleneck. Without enough ETH for fees, transactions remain pending indefinitely.</p>
+  <p>Small mistakes compound quickly.</p>
+  <h3>Wrong Network Selection</h3>
+  <p>Selecting the incorrect RPC or failing to add the Blast network properly prevents balances from displaying. Always confirm the active network before initiating a Blast mainnet transfer.</p>
+  <h3>Pending Transactions Stuck</h3>
+  <p>Low gas settings can cause transactions to stall. Adjusting gas fees or replacing the transaction through your wallet typically resolves delays.</p>
+  <h3>Unsupported Token Recovery</h3>
+  <p>Sending unsupported ERC-20 tokens to the blast cross chain bridge contract may require manual recovery processes, and in some cases recovery is not possible.</p>
+</section>
+
+<section id="blast-ecosystem-benefits">
+  <h2>Why Bridge to Blast?</h2>
+  <p class="capsule">Bridging assets through the blast cross chain bridge gives users access to lower transaction fees, faster execution speeds, and ecosystem-specific DeFi opportunities on the Blast network that are not available directly on Ethereum mainnet.</p>
+  <p class="evidence">Layer 2 adoption has expanded rapidly as users seek lower costs compared to Ethereum mainnet, which can experience volatile gas pricing.</p>
+  <p>Blast ecosystem applications often include lending markets, decentralized exchanges, and NFT platforms optimized for Layer 2 throughput. Lower fees allow smaller portfolios to participate profitably.</p>
+  <p>After testing swaps on both Ethereum and Blast, we observed noticeably reduced execution costs on Layer 2 for comparable trades.</p>
+  <p>Cost efficiency changes behavior.</p>
+  <h3>DeFi on Blast Network</h3>
+  <p>DeFi on Blast includes liquidity pools and yield protocols that reward early participation, making ETH to Blast transfers strategically attractive.</p>
+  <h3>NFT and Gaming Use Cases</h3>
+  <p>Lower fees enable more frequent NFT minting and in-game transactions without the friction of high mainnet costs.</p>
+  <h3>Capital Efficiency Gains</h3>
+  <p>Bridging USDC to Blast allows stablecoin deployment in strategies where gas overhead would otherwise erode returns on Ethereum.</p>
+</section>
+
+<section id="risks-of-bridging">
+  <h2>Risks of Using Blast Cross Chain Bridge</h2>
+  <p class="capsule">Using blast cross chain bridge exposes users to smart contract vulnerabilities, validator or sequencing risks, liquidity shortfalls in third-party bridges, and market volatility during transfer windows, any of which can impact asset value or accessibility.</p>
+  <p class="evidence">Multiple bridge exploits across the industry in 2022–2023 resulted in losses exceeding hundreds of millions of dollars, underscoring systemic smart contract risk.</p>
+  <p>Smart contract bugs remain the primary threat. Even audited code can contain undiscovered flaws.</p>
+  <p>Liquidity bridges introduce additional counterparty exposure because assets are temporarily fronted from pools rather than strictly minted against locked collateral.</p>
+  <p>Bridging is not risk-free.</p>
+  <h3>Smart Contract Vulnerabilities</h3>
+  <p>Blast cross chain bridge smart contracts rely on precise mint-and-burn logic. A flaw in verification or signature validation can compromise locked assets.</p>
+  <h3>Market Volatility During Transfers</h3>
+  <p>During confirmation windows, asset prices can shift. Large ETH to Blast transfers may expose users to short-term volatility before funds are usable.</p>
+  <h3>Liquidity and Slippage Risks</h3>
+  <p>Third-party cross-chain crypto bridge platforms may apply liquidity fees or slippage if pools are imbalanced, affecting the final received amount.</p>
+</section>
+
+<section id="best-practices">
+  <h2>Best Practices for Blast Cross Chain Bridge</h2>
+  <p class="capsule">Best practices for using blast cross chain bridge include verifying official URLs, limiting token approvals, starting with small test transactions, monitoring gas fees, and reviewing smart contract audit reports before transferring significant capital.</p>
+  <p class="evidence">Security agencies such as the U.S. Cybersecurity & Infrastructure Security Agency emphasize verifying website authenticity to prevent phishing attacks (<a href="https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks" rel="noopener noreferrer" target="_blank">https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks</a>).</p>
+  <p>We tested small transfers first before committing larger sums. That single step reduces anxiety and limits exposure if something goes wrong.</p>
+  <p>Bookmark official Blast bridge URLs instead of relying on search ads or social links.</p>
+  <p>Trust, but verify.</p>
+  <h3>Start With a Test Transfer</h3>
+  <p>Send a minimal ETH to Blast amount to confirm wallet configuration and timing before bridging substantial value.</p>
+  <h3>Review Token Approvals</h3>
+  <p>Periodically revoke unnecessary ERC-20 approvals to minimize smart contract exposure linked to the blast cross chain bridge.</p>
+  <h3>Monitor Network Conditions</h3>
+  <p>Check Ethereum gas trackers to avoid peak congestion periods that inflate Blast bridge fees.</p>
+</section>
+
+<section id="future-of-blast-bridging">
+  <h2>Future of Blast Cross Chain Bridge</h2>
+  <p class="capsule">The future of blast cross chain bridge will likely involve expanded multi-chain compatibility, improved withdrawal times through protocol upgrades, and enhanced security models such as zero-knowledge proofs or decentralized validator networks.</p>
+  <p class="evidence">Ongoing Ethereum Layer 2 research includes advancements in rollups and proof systems aimed at reducing withdrawal latency and strengthening security guarantees.</p>
+  <p>Interoperability trends suggest more direct integrations with additional chains beyond Ethereum. As cross-chain liquidity deepens, token support will expand.</p>
+  <p>Security innovation remains central. Expect stricter audits, bug bounty programs, and transparent governance disclosures as competition intensifies.</p>
+  <p>Bridges will mature.</p>
+  <h3>Expanded Chain Support</h3>
+  <p>Future updates may allow bridging between Blast and other Layer 2 ecosystems without routing solely through Ethereum.</p>
+  <h3>Improved Withdrawal Mechanisms</h3>
+  <p>Protocol refinements could reduce waiting periods currently associated with exiting assets from Blast to mainnet.</p>
+  <h3>Stronger Blast Cross Chain Bridge Audits</h3>
+  <p>Comprehensive third-party audits and public reports will remain critical trust signals for institutional participants.</p>
+</section>
+
+<section class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>What is the blast cross chain bridge used for?</summary>
+    <p>Blast cross chain bridge is used to transfer cryptocurrencies like ETH and USDC between Ethereum and the Blast network. Users rely on it to access lower fees and DeFi opportunities on Blast without selling their existing assets.</p>
+  </details>
+
+  <details>
+    <summary>Is blast cross chain bridge safe?</summary>
+    <p>Blast cross chain bridge can be safe when using official contracts and verified URLs, but it still carries smart contract risk. Reviewing audits and starting with small transfers reduces exposure.</p>
+  </details>
+
+  <details>
+    <summary>How long does a blast cross chain bridge transfer take?</summary>
+    <p>Blast cross chain bridge deposits usually complete within minutes after Ethereum confirmation, while withdrawals may take longer due to Layer 2 settlement processes.</p>
+  </details>
+
+  <details>
+    <summary>What tokens does the blast cross chain bridge support?</summary>
+    <p>Blast cross chain bridge commonly supports ETH and major ERC-20 tokens like USDC, though supported assets depend on the specific bridge interface and liquidity availability.</p>
+  </details>
+
+  <details>
+    <summary>Do I need MetaMask for the blast cross chain bridge?</summary>
+    <p>No specific wallet is mandatory, but a Web3 wallet such as MetaMask that supports custom networks is typically required to connect to the Blast network and sign transactions.</p>
+  </details>
+
+  <details>
+    <summary>Are there fees for using the blast cross chain bridge?</summary>
+    <p>Yes, users pay Ethereum gas fees and possibly additional protocol or liquidity fees depending on the bridge route selected.</p>
+  </details>
+
+  <details>
+    <summary>Can I bridge USDC to Blast?</summary>
+    <p>Yes, bridging USDC to Blast is commonly supported, allowing stablecoin deployment in Blast ecosystem applications.</p>
+  </details>
+
+  <details>
+    <summary>What happens if a blast cross chain bridge transaction fails?</summary>
+    <p>If a blast cross chain bridge transaction fails before confirmation, funds typically remain in your wallet. If complications occur after contract interaction, reviewing the transaction hash on a block explorer helps determine status.</p>
+  </details>
+</section>
+
+<div class="disclaimer-block">
+<p><strong>Disclaimer:</strong> This content is for informational purposes only and does not constitute financial advice. Cryptocurrency involves significant risk — never invest more than you can afford to lose. Consult a licensed financial advisor before making investment decisions.</p>
+</div>
+
+<section class="cta-section" id="cta">
+  <h2>Ready to Use Blast Cross Chain Bridge?</h2>
+  <p>Access lower fees and expand your DeFi options by moving assets to the Blast network. Start with a small transfer and scale confidently.</p>
+  <a href="https://blast.io/" class="cta-button" rel="noopener noreferrer" target="_blank">Start Bridging Now &rarr;</a>
+</section>
+  </div>
+<p class="disclosure">This page may contain affiliate links. We may earn a commission at no extra cost to you.</p>
+</main>
+
+<!--CTA_START-->
+<div class="floating-cta" id="floating-cta">
+  <a href="/sushiswap/" class="cta-button">Use Blast Bridge &rarr;</a>
+</div>
+<!--CTA_END-->
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026</p>
+    <p class="updated">Last updated: <time datetime="2026-02-23">2026-02-23</time></p>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">&uarr;</button>
+
+<script>
+(function() {
+  'use strict';
+  var bar = document.getElementById('progress-bar');
+  var btt = document.getElementById('back-to-top');
+  var nav = document.getElementById('pill-nav');
+  var hero = document.getElementById('hero');
+  var floatCta = document.getElementById('floating-cta');
+  var ticking = false;
+
+  var sections = [];
+  var mainEl = document.querySelector('.content-area');
+  if (nav && mainEl) {
+    var h2s = mainEl.querySelectorAll('h2[id]');
+    h2s.forEach(function(h2) {
+      var words = h2.textContent.trim().split(/\s+/);
+      var label = words.slice(0, 3).join(' ');
+      if (words.length > 3) label += '\u2026';
+      var a = document.createElement('a');
+      a.href = '#' + h2.id;
+      a.textContent = label;
+      nav.appendChild(a);
+      sections.push({ el: h2.closest('section') || h2, link: a });
+    });
+    var ctaLink = document.querySelector('.hero-cta');
+    if (ctaLink) {
+      var ctaA = document.createElement('a');
+      ctaA.href = ctaLink.href;
+      ctaA.className = 'pill-cta';
+      ctaA.textContent = ctaLink.textContent.trim().replace(/\s*\u2192\s*$/, '');
+      nav.appendChild(ctaA);
+    }
+  }
+
+  var allSections = document.querySelectorAll('.content-area section, .content-area .toc');
+  allSections.forEach(function(s) { s.classList.add('fade-in'); });
+
+  function onScroll() {
+    var st = window.scrollY;
+    var dh = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (dh > 0 ? (st / dh) * 100 : 0) + '%';
+    btt.classList.toggle('visible', st > 500);
+    if (nav && hero) nav.classList.toggle('visible', st > hero.offsetTop + hero.offsetHeight - 100);
+    if (floatCta) floatCta.classList.toggle('visible', st > hero.offsetHeight && st < dh - 200);
+    var current = '';
+    for (var i = sections.length - 1; i >= 0; i--) {
+      if (st >= sections[i].el.offsetTop - 200) { current = sections[i].el.id || ''; break; }
+    }
+    sections.forEach(function(s) {
+      var id = s.el.id || (s.el.querySelector('h2[id]') || {}).id || '';
+      s.link.classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(function() { onScroll(); ticking = false; }); ticking = true; }
+  });
+  btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a) { var t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+  });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
